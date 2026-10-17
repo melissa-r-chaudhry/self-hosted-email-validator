@@ -1,5 +1,13 @@
 # self-hosted-email-validator
 
+**What it is:** A two-tier email deliverability checker that never uploads your list to a third party.
+**Why it existed:** Every mainstream validation service (ZeroBounce, NeverBounce, BriteVerify, etc.) requires uploading the full recipient list to their cloud — disqualifying for any dataset kept under direct control.
+**What I owned:** Full design and build, plus the empirical per-provider findings (documented below) that shaped the rate-limiting and trust model.
+**Stack:** Python, dnspython, smtplib.
+**Production status:** Run against a real 146,000-address list before a real send; this is the real algorithm, standalone.
+
+---
+
 A two-tier email deliverability checker that never sends your recipient
 list anywhere. Built for a real 146,000-address list that needed cleaning
 before a large real send, where every mainstream validation
